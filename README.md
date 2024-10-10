@@ -8,4 +8,11 @@ The official Pytorch implementation of QT-TDM model presented in paper:
 
 
 # Method
-QT-TDM is a Transformer-based model-based algorithm that consists of two modules: __(a)Transformer Dynamics Model (TDM)__ ; __(b) Q-Transformer (QT)__
+QT-TDM is a Transformer-based model-based algorithm that consists of two modules: 
+
+__(a)Transformer Dynamics Model (TDM).__  
+
+__(b) Q-Transformer (QT).__
+
+While Transformers serve as large, expressive, and robust dynamics models, they are not optimized for fast real-time planning due to the autoregressive token predictions and the per-dimension tokenization scheme.
+QT-TDM improves real-time planning capabilities and efficiency by shortenning the planning horizon and utilizing the Q-Transformer model to estimate a long-term return beyond the short-term planning horizon
