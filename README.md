@@ -17,4 +17,4 @@ __(b) Q-Transformer (QT).__
 While Transformers serve as large, expressive, and robust dynamics models, they are not optimized for fast real-time planning due to the autoregressive token predictions and the per-dimension tokenization scheme.
 QT-TDM improves real-time planning capabilities and efficiency by shortenning the planning horizon and utilizing the Q-Transformer model to estimate a long-term return beyond the short-term planning horizon, as shown in the following Fig. :
 
-<img src="https://github.com/2M-kotb/QT-TDM/blob/main/planning.png" width=40% height=40%>
+<img src="https://github.com/2M-kotb/QT-TDM/blob/main/planning.png" width=45% height=45%>
