@@ -1,5 +1,5 @@
 # QT-TDM
-<img src="https://github.com/2M-kotb/QT-TDM/blob/main/QT-TDM.png" width=80% height=80%>
+<img src="https://github.com/2M-kotb/QT-TDM/blob/main/QT-TDM.png" width=100% height=100%>
 
 
 
