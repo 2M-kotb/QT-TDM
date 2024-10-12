@@ -10,7 +10,7 @@ The official Pytorch implementation of QT-TDM model presented in paper:
 # Method
 QT-TDM is a Transformer-based model-based algorithm that consists of two modules: 
 
-__(a)Transformer Dynamics Model (TDM).__  
+__(a) Transformer Dynamics Model (TDM).__  
 
 __(b) Q-Transformer (QT).__
 
