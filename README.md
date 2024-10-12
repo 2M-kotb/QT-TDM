@@ -46,3 +46,18 @@ __To train and evaluate QT:__
 
 Follow instructions in: [Q-Transformer](https://github.com/2M-kotb/Q-Transformer/tree/main)
 
+# Citation
+cite the paper as follows:
+```
+@article{kotb2024qt,
+  title={QT-TDM: Planning with Transformer Dynamics Model and Autoregressive Q-Learning},
+  author={Kotb, Mostafa and Weber, Cornelius and Hafez, Muhammad Burhan and Wermter, Stefan},
+  journal={arXiv preprint arXiv:2407.18841},
+  year={2024}
+}
+```
+
+# Credits
+* IRIS: https://github.com/eloialonso/iris/tree/main
+* minGPT: https://github.com/karpathy/minGPT
+
