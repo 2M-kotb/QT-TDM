@@ -1,4 +1,4 @@
-name: qt
+name: qttdm
 channels:
   - pytorch
   - nvidia
