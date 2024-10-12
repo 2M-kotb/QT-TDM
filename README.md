@@ -1,5 +1,5 @@
 # QT-TDM
-<img src="https://github.com/2M-kotb/QT-TDM/blob/main/media/QT-TDM.png" width=100% height=100%>
+<img src="https://github.com/2M-kotb/QT-TDM/blob/main/media/QT-TDM.png" width=80% height=80%>
 
 
 The official Pytorch implementation of QT-TDM model presented in paper:
@@ -23,7 +23,7 @@ QT-TDM improves real-time planning capabilities and efficiency by shortenning th
 
 Experiments on state-based tasks from two benchmarks: [MetaWorld](https://meta-world.github.io) and [DeepMind Control Suite](https://github.com/deepmind/dm_control), show that QT-TDM outperforms two recurrent-based model-based algorithms __PlaNet__ and __DreamerV3__ highlighting the superiority of Transformers over Recurrent Neural Networks in dynamics modeling. QT-TDM surpasses __TDM__ which performs planning without utilizing a terminal Q-value demonstrating the impact of terminaL Q-value in enhancing planning capabilities and efficiency. 
 
-<img src="https://github.com/2M-kotb/QT-TDM/blob/main/media/comparison_with_baselines.png" width=80% height=80%>
+<img src="https://github.com/2M-kotb/QT-TDM/blob/main/media/comparison_with_baselines.png" width=100% height=100%>
 
 # Usage
 
