@@ -19,7 +19,11 @@ QT-TDM improves real-time planning capabilities and efficiency by shortenning th
 
 <img src="https://github.com/2M-kotb/QT-TDM/blob/main/media/planning.png" width=45% height=45%>
 
+# Experiments
+
 Experiments on state-based tasks from two benchmarks: [MetaWorld](https://meta-world.github.io) and [DeepMind Control Suite](https://github.com/deepmind/dm_control), show that QT-TDM outperforms two recurrent-based model-based algorithms __PlaNet__ and __DreamerV3__ highlighting the superiority of Transformers over Recurrent Neural Networks in dynamics modeling. QT-TDM surpasses __TDM__ which performs planning without utilizing a terminal Q-value demonstrating the impact of terminaL Q-value in enhancing planning capabilities and efficiency. 
+
+<img src="https://github.com/2M-kotb/QT-TDM/blob/main/media/comparison_with_baselines.pdf" width=45% height=45%>
 
 # Usage
 
