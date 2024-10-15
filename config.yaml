@@ -1,0 +1,105 @@
+# Environment
+env:
+  domain:  metaworld
+  task: mw-hammer
+  modality: state
+  frame_stack: 1 # in pixels modality only
+  action_repeat: 2
+  max_num_episodes: 10000 # buffer size
+  train_steps: 1000000
+  seed: 18
+  discount: 0.98
+  obs_shape: ???
+  action_dim: ???
+  episode_length: ???
+  scale: ??? # for reward scaling (based on benchmark; DMC is 1.0, MetaWorld is 0.5)
+
+# misc
+misc:
+  seed: ${env.seed}
+  device: cuda
+  eval_episodes: 10
+  eval_freq: 10000 
+  seed_steps: 2000
+
+# wandb
+wandb:
+  use_wandb: false # to log with wandb
+  project: # project name
+  entity: 
+  exp_name: default        
+  save_video: false # to record evaluation episodes and log it to wandb
+  save_model: false # to save the model after training
+  seed: ${env.seed}
+
+# Q-Transformer
+qtransformer:
+  action_bins: 256 
+  obs_shape: ${env.obs_shape}
+  tokens_per_block: ${env.action_dim}
+  max_blocks: 1 # max len of sequence
+  max_tokens: ??? # max num of tokens is (tokens_per_block * max_blocks)
+  num_layers: 2 # num of transformer blocks (ie, masked self-attention followed by FFNN) 
+  num_heads: 8 # num of attention heads
+  embed_dim: 128  # token embed dim 
+  embed_pdrop: 0.1 # embeddings dropout 
+  resid_pdrop: 0.1 # residual dropout 
+  attn_pdrop: 0.1 # attention dropout 
+  attention: causal
+  td_loss_coef: 1.0
+  conservative_loss_coef: 0.5
+  conservative_reg_loss_weight: 0.0 # only used during offline RL (we set it to zero as it is online RL)
+  lr: 3e-4 
+  eps: 1e-5 
+  decay: 1e-6
+  grad_clip:  20 
+  updtae_freq: 10 # set it to 5 with DMC, frequency to update target model
+  tau: 0.005  # EMA coefficient
+  n_step_td: 3
+  use_MC_return: false  # Monte-Carlo return, only with sparse reward tasks
+  discount: ${env.discount}
+  train_steps: ${env.train_steps} # required for epsilon decay 
+  final_epsilon: 0.01
+  seed_steps: ${misc.seed_steps}
+  horizon: ${planning.horizon}
+
+
+
+#TDM
+tdm:
+  action_bins: ${qtransformer.action_bins}
+  obs_shape: ${env.obs_shape}
+  obs_tokens: 1 # one token 
+  action_tokens: ${env.action_dim} # one token per action dim
+  tokens_per_block: ??? # obs_token + action_token
+  max_blocks: 20 # max len of sequence (i.e., num of time steps)
+  max_tokens: ??? # max num of tokens is (tokens_per_block * max_blocks)
+  batch_size: 512
+  attention: causal
+  num_layers: 5 # num of transformer blocks (ie, masked self-attention followed by FFNN)
+  num_heads: 4 # num of attention heads 
+  embed_dim: 256  # token embed dim 
+  embed_pdrop: 0.1 # embeddings dropout 
+  resid_pdrop: 0.1 # residual dropout 
+  attn_pdrop: 0.1 # attention dropout 
+  reward_loss_coef: 2
+  obs_loss_coef: 1
+  lr: 1e-4
+  eps: 1e-5
+  decay: 1e-6
+  grad_clip: 30
+  horizon: ${planning.horizon}
+
+
+#planning
+planning:
+  mpc: false # mpc W/O Q-Transformer
+  mpc_QT: false # mpc W/ Q-Transformer
+  horizon: 3
+  iterations: 6
+  num_samples: 512
+  num_elites: 64
+  temperature: 0.5
+  num_Q_trajs: 24 # QTransformer trajectories
+
+
