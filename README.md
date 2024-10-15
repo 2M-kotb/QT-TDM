@@ -42,10 +42,6 @@ __To train and evaluate TDM:__
 python3 src/main.py planning.mpc=true env.domain=metaworld env.task=mw-hammer env.action_repeat=2 env.seed=1
 ```
 
-__To train and evaluate QT:__
-
-Go to GitHub: [Q-Transformer](https://github.com/2M-kotb/Q-Transformer/tree/main)
-
 ``` env.domain``` can take ```metaworld``` or ```dmc_suite``` for [MetaWorld](https://meta-world.github.io) and [DeepMind Control Suite](https://github.com/deepmind/dm_control).
 
 For ```dmc_suite``` set ```update_freq: 5``` in ```config.yaml```.
@@ -53,6 +49,10 @@ For ```dmc_suite``` set ```update_freq: 5``` in ```config.yaml```.
 For ```sparse reward tasks``` set ```use_MC_return: true``` in ```config.yaml```.
 
 To use [Weights&Biases](https://wandb.ai/site/) for logging, set up ```wandb``` variables inside ```config.yaml```.
+
+__To train and evaluate QT:__
+
+Go to GitHub: [Q-Transformer](https://github.com/2M-kotb/Q-Transformer/tree/main)
 
 # Citation
 cite the paper as follows:
