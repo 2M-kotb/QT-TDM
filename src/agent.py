@@ -9,7 +9,7 @@ from einops import rearrange, repeat
 from typing import Any, Dict, Optional, Tuple
 from pathlib import Path
 from logger import make_dir
-from model.utils import ema, Discretize, linear_schedule
+from model.utils import ema, Discretize
 from model.Q_transformer_model import QTransformer
 from model.transformer_dynamics_model import TDM
 
@@ -224,13 +224,5 @@ class QT_TDM(nn.Module):
         return metrics
 
 
-    
-
     def _to_device(self, batch: Dict[str, torch.Tensor]) -> Dict[str, torch.Tensor]:
         return {k: batch[k].to(self.device) for k in batch}
-
-
-        
-
-
-
