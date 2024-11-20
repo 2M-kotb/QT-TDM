@@ -4,7 +4,7 @@
 
 The official Pytorch implementation of QT-TDM model presented in paper:
 
-[QT-TDM: Planning with Transformer Dynamics Model and Autoregressive Q-Learning](https://[arxiv.org/pdf/2407.18841v2])
+[QT-TDM: Planning with Transformer Dynamics Model and Autoregressive Q-Learning](https://arxiv.org/pdf/2407.18841v2)
 
 
 # Method
